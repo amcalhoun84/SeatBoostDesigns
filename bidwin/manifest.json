@@ -1,0 +1,29 @@
+// Copyright (c) 2016 SeatBoost LLC, All Rights Reserved.
+// Designed by Andrew M. Calhoun for testing the client app within the
+// bidwinengine. 
+// Use of this source code is forbidden for uses other than the
+// intention of the plug-in. 
+
+{
+	"manifest_version" : 2,
+	"name" : "BidWin Automated Testing",
+	"version" : "0.1",
+	"description" : "Tests Bidwin functions to ensure proper system protocol and functionality",
+	"icons" : { "128" : "bidwinicon.png" }, 
+	"content_scripts" : [ 
+		{
+			"matches" : ["https://*.bidwinengine.com/*"],
+			"js" : ["content.js"]
+		}
+	],
+	"background" : 	{ 
+		"persistent" : false,
+		"scripts" : ["bwtests.js"]
+		},
+		"permissions" : ["tabs", "activeTab"],
+		"browser_action" : {
+			"defauit_title" : "Bidwin Test",
+			"default_icon" : "bidwin_19.png"
+			 // "default_popup" : "bidpu.html"
+		}
+}

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' bwtests.js ">
+<!-- <link href="http://fonts.google.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href=style.css /> -->
+<script src="bwtests.js"></script>
+<title>BidWin Testing</title>
+</head>
+<body>
+
+<p> You should see a pop up with some objects slowly being populated as time goes on. </p>
+
+<form class="airlineInfo" id="airlineInfo">
+
+<h2> Test Flights </h2>
+<p>Pick an airline and flight number</p>
+<select name="airlineSel" id="airlineSel">
+<option value="">All</option>
+<option value="17" >9W</option>
+<option value="18" >AA</option>
+<option value="12" >AB</option>
+<option value="10" >AM</option>
+<option value="13" >AS</option>
+<option value="4" >BW</option>
+<option value="7" >DL</option>
+<option value="11" >EY</option>
+<option value="8" >HA</option>
+<option value="14" >LH</option>
+<option value="15" >NZ</option>
+<option value="1" >SB</option>
+<option value="5" >TW</option>
+<option value="6" >UA</option>
+<option value="3" >V3</option>
+<option value="2" >VX</option>
+<option value="9" >VX2</option>
+<option value="16" >WS</option>
+</select>
+
+Flight #: <input type="text" name="flightSel" id="flightSel" />
+
+<br />
+
+<h3>Pick a place of origin and destination</h3>
+<select name="originSel" id="originSel" >
+<option value="">All</option>
+<option value="3" >DAL</option>
+<option value="7" >FRA</option>
+<option value="5" >JFK</option>
+<option value="1" >LAS</option>
+<option value="4" >LAX</option>
+<option value="6" >ORD</option>
+<option value="8" >PTY</option>
+<option value="2" >SFO</option>
+</select>
+
+<select name="destinationSel" id="destinationSel" >
+<option value="">All</option>
+<option value="3" >DAL</option>
+<option value="7" >FRA</option>
+<option value="5" >JFK</option>
+<option value="1" >LAS</option>
+<option value="4" >LAX</option>
+<option value="6" >ORD</option>
+<option value="8" >PTY</option>
+<option value="2" >SFO</option>
+</select>
+<br />
+
+<h3>Pick an upgrade class and time frame</h3>
+<select name="upgradeClassSel" id="upgradeClassSel" >
+<option value="">All</option>
+<option value="G" >G</option>
+<option value="R" >R</option>
+<option value="" ></option>
+</select>
+
+<select name="timePeriodSel" id="timePeriodSel" >
+<option value="all" >All</option>
+<option value="today" >Today</option>
+<option value="yesterday" >Yesterday</option>
+<option value="days7" >Last 7 days</option>
+<option value="days14" >Last 14 days</option>
+<option value="days30" selected="selected" >Last 30 days</option>
+<option value="days60" >Last 60 days</option>
+<option value="days90" >Last 90 days</option>
+<option value="YTD" >Year to date</option>
+</select>
+
+<!--<script src="linkcheck.js"></script> -->
+<!-- <script src="devtools.js"></script> -->
+<input type="submit" name="submitForAirline" id="sFA" onClick="getInformation()">
+
+</form>
+
+</body>
+</html>
