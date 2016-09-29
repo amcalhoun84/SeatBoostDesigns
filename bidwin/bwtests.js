@@ -49,16 +49,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 	for(var i = 0; i < x; i++)
 	{
-
+		var pause = Math.floor(Math.random() * (5000 * i)) + 1;
+		setTimeout(function() {
 		chrome.tabs.create({
 			url: "https://stage.bidwinengine.com/admin/client"
 			}, function(tab) { 
 				//var y = prompt("Passanger Name"); 
 				//alert(tab.id);
-				setTimeout(function() {
+				
 				chrome.tabs.executeScript(tab.id, { file: 'content.js' });
-			}, 2000);				
-		});
-
+			});
+		}, pause);		
 	}
 });

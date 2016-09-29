@@ -24,8 +24,8 @@ setTimeout(function() {
 setTimeout(function() { 
 	document.getElementById("panel-payment").querySelector('.btn.btn-primary').click(); }, 10000);
 
-document.getElementById('fld-airlineCode').value = "UA";
-document.getElementById('fld-flightNumber').value = "BW220003";
+document.getElementById('fld-airlineCode').value = "VX";
+document.getElementById('fld-flightNumber').value = "BW125501";
 
 setTimeout(function() { 
 	document.getElementById("panel-find").querySelector('.btn.btn-primary').click(); }, 18000);
@@ -38,9 +38,81 @@ document.getElementById("fld-displayName").value = x;
 setTimeout(function() { 
 	document.getElementById("panel-join").querySelector('.btn.btn-primary').click(); }, 30000);
 
+//setTimeout(function() { 
+//	document.getElementById("panel-bid").querySelector("#autobid").click(); }, 36000);
+
 setTimeout(function() { 
-	document.getElementById("panel-bid").querySelector("#autobid").click(); }, 36000);
+	document.getElementById("panel-bid").querySelector("#btn-bid-top").click(); }, 36000);
+
+
+var k = Math.floor(Math.random() * 1000) + 1;
+var pause = Math.floor(Math.random() * 42000) + 1;
+var bidLimit = Math.floor(Math.random() * 250);
+
+// var timeInAuction = Math.floor(Math.random() * 165000) + 1;
+
+/* if timeEnd < 165000 +/- timeinAuction; then kill. Otherwise, keep going. */
+
+var time = 165000;
+var endTime = interval(time);
+var d = new Date();
+var timeStart = d.getTime();
+
+for(var p = 0; p < k; k--)
+{
+	var truePause = 1;
+	// var newBid = 0;
+	topBid = document.getElementById("amount").value;
+	var pauseInterval = Math.floor(Math.random() * 500000) + 1;
+	truePause = Math.floor(Math.random() * truePause * k) * pauseInterval;
+
+	var endLoop = new Date();
+	var newTime = endLoop.getTime();
+
+	var getTimeDiff = (newTime - timeStart);
+	console.log("Time Difference: " + getTimeDiff);
+
+	if(getTimeDiff > endTime)
+	{
+		break;
+	}
+
+	else { 
+
+		setTimeout(function() { 
+			if(bidLimit >= topBid) {
+				document.getElementById("panel-bid").querySelector("#btn-bid-top").click();
+				}
+		}, truePause);
+	}
+	
+	if(bidLimit === topBid)
+	{
+		break;
+	}
+}
 
 
 
+function interval(time) { 
+	var timeMult = Math.floor(Math.random() * 10) + 1;
+	var variance = Math.floor(Math.random() * 1000) + 1;
+	variance *= timeMult;
+	var coinFlip = Math.random();
+	if(coinFlip >= .5)
+	{
+		time += variance;
+	}
+	else
+	{
+		time -= variance;
+		if(time <= 0)
+		{
+			time = 60000;
+		}
+	}
+
+	return time;
+
+}
 
